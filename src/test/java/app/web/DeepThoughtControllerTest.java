@@ -1,4 +1,8 @@
-package hello;
+package app.web;
+
+import static org.junit.Assert.*;
+
+import java.math.BigDecimal;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,14 +15,14 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class HelloTest {
+public class DeepThoughtControllerTest {
 
   @Autowired
   private TestRestTemplate api;
 
   @Test
   public void index() {
-    assertThat(this.api.getForObject("/", String.class)).isEqualTo("Greetings from Spring Boot!");
+    assertThat(this.api.getForObject("/", String.class)).isEqualTo("Deep Thought says: 42");
   }
 
 }
